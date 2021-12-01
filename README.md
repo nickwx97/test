@@ -117,12 +117,12 @@ pipeline {
 5. Click Manually and create a project
 ![sonarqube1](img/sonarqube1.png)
 6. Click Locally
-7. Generate a token. *SAVE THIS TOKEN FOR THE SERVER AUTHENTICATION LATER*
+7. Generate a token. **SAVE THIS TOKEN FOR THE SERVER AUTHENTICATION LATER**
 ![sonarqube2](img/sonarqube2.png)
-8. Continue and everything and *select correct parameters*
+8. Continue and everything and **select correct parameters**
 ![sonarqube3](img/sonarqube3.png)
-9. *Copy scanner info*
-10. Go *Manage jenkins* > *Configure system* > *Add sonarqube*
-11. Configure the settings and under Server authentication token, add the secret key as shown below by clicking the *Add* button to the right
+9. **Copy scanner info**
+10. Go **Manage jenkins** > **Configure system** > **Add sonarqube**
+11. Configure the settings and under Server authentication token, add the secret key as shown below by clicking the **Add** button to the right
 12. Go Global Tool Configuration > Sonarqube scanner
 ![sonarqube4](img/sonarqube4.png)

@@ -56,8 +56,7 @@
 # Set up Git repo
 ## Locally
 1. Mount folder to docker
-
-	-v /home/gitfolder/:/var/something/:ro
+`-v /home/gitfolder/:/var/something/:ro`
 
 2. ![hook trigger](hooktrigger.png)
 3. ![SO_local_git](SO_local_git.png)

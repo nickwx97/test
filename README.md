@@ -57,6 +57,7 @@
 ## Locally
 1. Mount folder to docker
 	-v /home/gitfolder/:/var/something/:ro
+
 2. ![hook trigger](hooktrigger.png)
 3. ![SO_local_git](SO_local_git.png)
 4. ![pipeline_local](pipeline_local.png)

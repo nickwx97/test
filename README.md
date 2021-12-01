@@ -51,16 +51,16 @@
 
 
 # Docker Cheatsheet
-![Docker Cheatsheet](docker_cs.png)
+![Docker Cheatsheet](img/docker_cs.png)
 
 # Set up Git repo
 ## Locally
 1. Mount folder to docker
 `-v /home/gitfolder/:/var/something/:ro`
 
-2. ![hook trigger](hooktrigger.png)
-3. ![SO_local_git](SO_local_git.png)
-4. ![pipeline_local](pipeline_local.png)
+2. ![hook trigger](img/hooktrigger.png)
+3. ![SO_local_git](img/SO_local_git.png)
+4. ![pipeline_local](img/pipeline_local.png)
 
 ## Remote
 ![pipeline_remote](pipeline_remote.png)
@@ -94,10 +94,35 @@ pipeline {
 # Installing OWASP Dependency Check
 1. Go to Plugin Manager > search for Owasp Dependency Checker
 2. Go to Manage Jenkins > Global Tool Configuration
-![install_DC](install_DC.png)
+![install_DC](img/install_DC.png)
 
 # Suppress OWASP Dependency Check false positive
 1. After running the owasp dependency check, it will output the dependency-check-output.html.
 2. Browse to it and save it as HTML.
 3. Open the HTML, you will be able to expand the suppression and copy out the related XML code to be paste in the suppression.xml.
-![suppress](suppress.png)
+![suppress](img/suppress.png)
+
+# Sonarqube
+1. Install sonarqube scanner on plugins page
+2. Install sonarqube docker `sudo docker pull sonarqube`
+3. Run sonarqube docker
+	```
+	docker run -d \
+	--name sonarqube \
+	-e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true \
+	-p 9000:9000 \
+	sonarqube:latest
+	```
+4. Login into port 9000  - access the sonarqube page 
+5. Click Manually and create a project
+![sonarqube1](img/sonarqube1.png)
+6. Click Locally
+7. Generate a token. *SAVE THIS TOKEN FOR THE SERVER AUTHENTICATION LATER*
+![sonarqube2](img/sonarqube2.png)
+8. Continue and everything and *select correct parameters*
+![sonarqube3](img/sonarqube3.png)
+9. *Copy scanner info*
+10. Go *Manage jenkins* > *Configure system* > *Add sonarqube*
+11. Configure the settings and under Server authentication token, add the secret key as shown below by clicking the *Add* button to the right
+12. Go Global Tool Configuration > Sonarqube scanner
+![sonarqube4](img/sonarqube4.png)

@@ -1,0 +1,4 @@
+<Files "database.php", "sendEmails.php">
+	Order Deny,Allow
+	Deny from all
+</Files>

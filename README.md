@@ -1,3 +1,19 @@
+# Table of contents
+1. [Basic Setup](#basic-setup)
+2. [CERT GEN](#CERT-GEN)
+3. [JENKINS DOCKER ](#JENKINS-DOCKER )
+4. [JENKINS NGINX PROXY](#JENKINS-NGINX-PROXY)
+5. [WEB APP NGINX PROXY](#WEB-APP-NGINX-PROXY)
+6. [JENKINS SETUP FOR DEPENDENCY CHECK ](#JENKINS-SETUP-FOR-DEPENDENCY-CHECK )
+7. [Docker Cheatsheet](#Docker-Cheatsheet)
+8. [Set up Git repo](#Set-up-Git-repo)
+	1. [Locally](#Locally)
+	2. [Remote](#Remote)
+9. Jenkinsfile for OWASP Dependency Checker
+10. Installing OWASP Dependency Check
+11. Suppress OWASP Dependency Check false positive
+12. Sonarqube
+
 # BASIC SETUP
 	apt update
 	apt upgrade
@@ -126,3 +142,5 @@ pipeline {
 11. Configure the settings and under Server authentication token, add the secret key as shown below by clicking the **Add** button to the right
 12. Go Global Tool Configuration > Sonarqube scanner
 ![sonarqube4](img/sonarqube4.png)
+13. Go **Global Tool Configuration** > **Sonarqube scanner**
+![sonarqube5](img/sonarqube5.png)

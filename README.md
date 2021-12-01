@@ -10,9 +10,9 @@
 	1. [Locally](#Locally)
 	2. [Remote](#Remote)
 9. [Jenkinsfile for OWASP Dependency Checker](#Jenkinsfile-for-OWASP-Dependency-Checker)
-10.[Installing OWASP Dependency Check](#Installing-OWASP-Dependency-Check)
-11.[Suppress OWASP Dependency Check false positive](#Suppress-OWASP-Dependency-Check-false-positive)
-12.[Sonarqube](#Sonarqube)
+10. [Installing OWASP Dependency Check](#Installing-OWASP-Dependency-Check)
+11. [Suppress OWASP Dependency Check false positive](#Suppress-OWASP-Dependency-Check-false-positive)
+12. [Sonarqube](#Sonarqube)
 
 # BASIC SETUP
 	apt update

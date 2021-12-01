@@ -79,7 +79,7 @@
 4. ![pipeline_local](img/pipeline_local.png)
 
 ## Remote
-![pipeline_remote](pipeline_remote.png)
+![pipeline_remote](img/pipeline_remote.png)
 
 # Jenkinsfile for OWASP Dependency Checker
 ```

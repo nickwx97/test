@@ -62,3 +62,42 @@
 3. ![SO_local_git](SO_local_git.png)
 4. ![pipeline_local](pipeline_local.png)
 
+## Remote
+![pipeline_remote](pipeline_remote.png)
+
+# Jenkinsfile for OWASP Dependency Checker
+```
+pipeline {
+	agent any
+	stages {
+		stage('Checkout SCM') {
+			steps {
+				git '/home/JenkinsDependencyCheckTest'
+			}
+		}
+
+		stage('OWASP DependencyCheck') {
+			steps {
+				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'Default'
+			}
+		}
+	}	
+	post {
+		success {
+			dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+		}
+	}
+}
+
+```
+
+# Installing OWASP Dependency Check
+1. Go to Plugin Manager > search for Owasp Dependency Checker
+2. Go to Manage Jenkins > Global Tool Configuration
+![install_DC](install_DC.png)
+
+# Suppress OWASP Dependency Check false positive
+1. After running the owasp dependency check, it will output the dependency-check-output.html.
+2. Browse to it and save it as HTML.
+3. Open the HTML, you will be able to expand the suppression and copy out the related XML code to be paste in the suppression.xml.
+![suppress](suppress.png)

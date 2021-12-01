@@ -1,5 +1,3 @@
-
-
 # BASIC SETUP
 	apt update
 	apt upgrade
@@ -10,6 +8,7 @@
 
 # CERT GEN
 	certbot certonly
+
 # JENKINS DOCKER 
     docker run --name jenkins-blueocean --rm
     --detach \
@@ -50,3 +49,4 @@
 6. Link GitHub using hook + access token
 7. Create Jenkinsfile in GitHub
 
+![Docker Cheatsheet](https://github.com/nickwx97/test/docker_cs.png)

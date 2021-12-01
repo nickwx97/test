@@ -49,4 +49,4 @@
 6. Link GitHub using hook + access token
 7. Create Jenkinsfile in GitHub
 
-![Docker Cheatsheet](https://github.com/nickwx97/test/docker_cs.png)
+![Docker Cheatsheet](docker_cs.png)

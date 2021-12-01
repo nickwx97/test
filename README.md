@@ -39,6 +39,8 @@
 
 # JENKINS GET INITIAL ADMIN PASSWORD
 `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
+
+
 `sudo docker exec [docker name] cat /var/jenkins_home/secrets/initialAdminPassword`
 
 # JENKINS NGINX PROXY

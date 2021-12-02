@@ -1,0 +1,45 @@
+pipeline {
+	agent any
+	tools {
+		maven 'Maven'
+	}
+	stages {
+		stage('Build'){
+			steps {
+				sh "sh deploy.sh"
+			}
+		}
+		stage('Integration UI Test') {
+			parallel {
+				stage('Deploy') {
+					agent any
+					steps {
+						echo "Deployed"
+					}
+				}
+				stage('Headless Browser Test') {
+					agent any
+					steps {
+						sh 'mvn -B -DskipTests clean package'
+						sh 'mvn test'
+					}
+					post {
+						always {
+							junit 'target/surefire-reports/*.xml'
+						}
+					}
+				}
+			}
+		}
+		stage('Code Quality Check via SonarQube'){
+			steps{
+				script{
+					def scannerHome = tool 'SonarQube';
+					withSonarQubeEnv('SonarQube'){
+						sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=webapp -Dsonar.sources=."
+					}
+				}
+			}
+		}
+	}
+}

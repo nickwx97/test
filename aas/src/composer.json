@@ -1,7 +1,0 @@
-{
-    "require": {
-        "swiftmailer/swiftmailer": "^6.0",
-        "sonata-project/google-authenticator": "2.2.0",
-        "phpunit/phpunit": "^8"
-    }
-}

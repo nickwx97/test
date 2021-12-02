@@ -2,17 +2,18 @@
 1. [Basic Setup](#basic-setup)
 2. [CERT GEN](#CERT-GEN)
 3. [JENKINS DOCKER ](#JENKINS-DOCKER )
-4. [JENKINS NGINX PROXY](#JENKINS-NGINX-PROXY)
-5. [WEB APP NGINX PROXY](#WEB-APP-NGINX-PROXY)
-6. [JENKINS SETUP FOR DEPENDENCY CHECK ](#JENKINS-SETUP-FOR-DEPENDENCY-CHECK )
-7. [Docker Cheatsheet](#Docker-Cheatsheet)
-8. [Set up Git repo](#Set-up-Git-repo)
+4. [JENKINS GET INITIAL ADMIN PASSWORD](#JENKINS-GET-INITIAL-ADMIN-PASSWORD)
+5. [JENKINS NGINX PROXY](#JENKINS-NGINX-PROXY)
+6. [WEB APP NGINX PROXY](#WEB-APP-NGINX-PROXY)
+7. [JENKINS SETUP FOR DEPENDENCY CHECK ](#JENKINS-SETUP-FOR-DEPENDENCY-CHECK )
+8. [Docker Cheatsheet](#Docker-Cheatsheet)
+9. [Set up Git repo](#Set-up-Git-repo)
 	1. [Locally](#Locally)
 	2. [Remote](#Remote)
-9. [Jenkinsfile for OWASP Dependency Checker](#Jenkinsfile-for-OWASP-Dependency-Checker)
-10. [Installing OWASP Dependency Check](#Installing-OWASP-Dependency-Check)
-11. [Suppress OWASP Dependency Check false positive](#Suppress-OWASP-Dependency-Check-false-positive)
-12. [Sonarqube](#Sonarqube)
+10. [Jenkinsfile for OWASP Dependency Checker](#Jenkinsfile-for-OWASP-Dependency-Checker)
+11. [Installing OWASP Dependency Check](#Installing-OWASP-Dependency-Check)
+12. [Suppress OWASP Dependency Check false positive](#Suppress-OWASP-Dependency-Check-false-positive)
+13. [Sonarqube](#Sonarqube)
 
 # BASIC SETUP
 	apt update
@@ -35,6 +36,12 @@
     --volume /home/ubuntu/Desktop/test:/var/test:ro \
     --publish 8080:8080 \
     jenkinsci/blueocean
+
+# JENKINS GET INITIAL ADMIN PASSWORD
+`sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
+
+
+`sudo docker exec [docker name] cat /var/jenkins_home/secrets/initialAdminPassword`
 
 # JENKINS NGINX PROXY
     docker run \
